@@ -1,6 +1,10 @@
 gem 'minitest', '~> 5.4'
 require 'minitest/autorun'
 require_relative '../lib/bottles'
+require 'minitest/reporters'
+reporter_options = { color: true }
+Minitest::Reporters.use! [Minitest::Reporters::DefaultReporter.new(reporter_options)]
+
 
 class BottlesTest < Minitest::Test
   def test_the_first_verse
